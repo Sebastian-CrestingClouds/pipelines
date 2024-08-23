@@ -58,6 +58,10 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
           vscode.window.showErrorMessage(data.value);
           break;
         }
+        case "getStarted": {
+          vscode.commands.executeCommand("cresting-pipelines.getStarted");
+          break;
+        }
       }
     });
   }

@@ -3,11 +3,17 @@
     import Github from "../media/GitHub.svg.svelte";
     import Home from "../media/Home.svg.svelte";
     import Rocket from "../media/Rocket.svg.svelte";
+
+
+    function handleGetStartedClick() {
+        tsvscode.postMessage({
+        type: 'getStarted'
+        });
+    }
 </script>
+
 <style>
-    .buttonIcon:hover {
-        background-color: var(--vscode-toolbar-hoverBackground);
-        }
+
 </style>
 
 
@@ -29,7 +35,9 @@
 <div style="font-style: italic;">
     Watch introductory videos, learn the first steps, and see how Cresting Pipelines can revolutionize your workflow.
 </div>
-    <button 
+   
+    <button
+    on:click={handleGetStartedClick}
     style="
     display: flex;
     flex-direction: row;

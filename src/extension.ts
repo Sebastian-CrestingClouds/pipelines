@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { SidebarProvider } from './SideBarProvider';
+import { GetStartedProvider } from './GetStartedProvider';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -15,6 +16,12 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('WATCH ME!');
 
 	}));
+
+	  context.subscriptions.push(
+      vscode.commands.registerCommand("cresting-pipelines.getStarted", () => {
+        GetStartedProvider.createOrShow(context.extensionUri);
+      })
+    );
 
 
 

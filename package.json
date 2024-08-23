@@ -10,7 +10,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onView:cp-sidebar"
+    "onView:cp-sidebar",
+    "onCommand:cresting-pipelines.getStarted"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -37,6 +38,7 @@
     "commands": [
       {
         "command": "cresting-pipelines.getStarted",
+        "category": "Cresting Pipelines",
         "title": "Get Started"
       }
     ]
