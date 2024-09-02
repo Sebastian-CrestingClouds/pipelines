@@ -11,7 +11,8 @@
   ],
   "activationEvents": [
     "onView:cp-sidebar",
-    "onCommand:cresting-pipelines.getStarted"
+    "onCommand:cresting-pipelines.getStarted",
+    "onCommand:cresting-pipelines.authenticate"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -40,6 +41,11 @@
         "command": "cresting-pipelines.getStarted",
         "category": "Cresting Pipelines",
         "title": "Get Started"
+      },
+      {
+        "command": "cresting-pipelines.authenticate",
+        "category": "Cresting Pipelines",
+        "title": "Authenticate"
       }
     ]
   },
@@ -59,8 +65,10 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@tsconfig/svelte": "^5.0.4",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
+    "@types/polka": "^0.5.7",
     "@types/vscode": "^1.92.0",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.11.0",
@@ -81,6 +89,12 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@types/rollup-plugin-svelte-svg": "^1.0.6"
+    "@auth/core": "^0.34.2",
+    "@auth/express": "^0.6.0",
+    "@auth/sveltekit": "^1.4.2",
+    "@types/rollup-plugin-svelte-svg": "^1.0.6",
+    "jose": "^5.8.0",
+    "next-auth": "^5.0.0-beta.20",
+    "polka": "^0.5.2"
   }
 }

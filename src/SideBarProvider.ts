@@ -2,7 +2,9 @@ import * as vscode from "vscode";
 //import { authenticate } from "./authenticate";
 //import { apiBaseUrl } from "./constants";
 import { getNonce } from "./getNonce";
+import { cookieManager } from "./cookieManager";
 //import { TokenManager } from "./TokenManager";
+
 
 export class SidebarProvider implements vscode.WebviewViewProvider {
   _view?: vscode.WebviewView;
@@ -62,6 +64,17 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
           vscode.commands.executeCommand("cresting-pipelines.getStarted");
           break;
         }
+        case "getSession": {
+          const session = await cookieManager.getSession();
+          if (session) {
+            webviewView.webview.postMessage({
+              type: "session",
+              value: session,
+            });
+          }
+          break;
+        }
+        
       }
     });
   }
