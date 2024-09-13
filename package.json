@@ -11,8 +11,7 @@
   ],
   "activationEvents": [
     "onView:cp-sidebar",
-    "onCommand:cresting-pipelines.getStarted",
-    "onCommand:cresting-pipelines.authenticate"
+    "onCommand:cresting-pipelines.getStarted"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -41,11 +40,6 @@
         "command": "cresting-pipelines.getStarted",
         "category": "Cresting Pipelines",
         "title": "Get Started"
-      },
-      {
-        "command": "cresting-pipelines.authenticate",
-        "category": "Cresting Pipelines",
-        "title": "Authenticate"
       }
     ]
   },

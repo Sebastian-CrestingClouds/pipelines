@@ -8,6 +8,11 @@ declare global {
   };
   const apiBaseUrl: string;
 
+declare module "*.svelte" {
+  import type { ComponentType } from "svelte";
+  const content: ComponentType;
+  export default content;
+}
 
   declare const vscode: VSCode;
 }

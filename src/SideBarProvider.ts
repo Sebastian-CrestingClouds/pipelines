@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 //import { authenticate } from "./authenticate";
 //import { apiBaseUrl } from "./constants";
 import { getNonce } from "./getNonce";
-import { cookieManager } from "./cookieManager";
+import { configManager } from "./configManager";
 //import { TokenManager } from "./TokenManager";
 
 
@@ -64,17 +64,17 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
           vscode.commands.executeCommand("cresting-pipelines.getStarted");
           break;
         }
-        case "getSession": {
-          const session = await cookieManager.getSession();
-          if (session) {
+        case "getApppat": {
+          console.log("getApppat");
+          const pat = configManager.getApppatValue();
+          if (pat) {
             webviewView.webview.postMessage({
-              type: "session",
-              value: session,
+              type: "pat",
+              value: pat,
             });
           }
           break;
         }
-        
       }
     });
   }
