@@ -23,7 +23,7 @@
 </div>
 
 <div style="  text-align: center"> 
-    The only Salesforce CI/CD solution you’ll ever need.
+    Salesforce CICD made easy.
 </div>
 
    
